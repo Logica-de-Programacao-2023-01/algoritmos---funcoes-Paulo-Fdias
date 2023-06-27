@@ -1,0 +1,16 @@
+package main
+
+import (
+	"fmt"
+	"strings"
+)
+
+func concatenateStrings(slice []string) string {
+	return strings.Join(slice, "")
+}
+
+func main() {
+	slice := []string{"Olá", " ", "Mundo!"}
+	result := concatenateStrings(slice)
+	fmt.Println(result) // Saída: Olá Mundo!
+}
