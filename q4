@@ -1,0 +1,27 @@
+package main
+
+import (
+	"fmt"
+	"sort"
+)
+
+func findSecondLargest(numbers []int) (int, error) {
+	if len(numbers) < 2 {
+		return 0, fmt.Errorf("Slice deve conter pelo menos 2 valores")
+	}
+
+	// Ordena o slice em ordem decrescente
+	sort.Sort(sort.Reverse(sort.IntSlice(numbers)))
+
+	return numbers[1], nil
+}
+
+func main() {
+	slice := []int{9, 4, 6, 2, 7, 1, 5}
+	secondLargest, err := findSecondLargest(slice)
+	if err != nil {
+		fmt.Println("Erro:", err)
+	} else {
+		fmt.Println("Segundo maior valor:", secondLargest)
+	}
+}
